@@ -1,0 +1,23 @@
+---
+spring:
+  application:
+    name: loaders
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/marketing_data?useSSL=false&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: false
+scheduled:
+  job:
+    cronEveryTenSeconds: "*/10 * * * * *"
+    cronEveryMinute: 0 * * * * *
+    cronEveryHour: 0 0 * * * *
+server:
+  port: 9091

@@ -1,0 +1,29 @@
+﻿**/target/
+**/node_modules/
+**/build/
+.idea/
+.vs/
+.settings/
+*.iml
+.classpath
+.factorypath
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+*.jar
+*.war
+*.class
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/

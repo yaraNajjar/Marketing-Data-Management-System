@@ -1,0 +1,16 @@
+.p-column-title {
+    text-align: center;
+    width: 100%;
+}
+
+.p-datatable-table {
+    border-radius: 5rem;
+}
+
+.p-datatable {
+    border-radius: 5rem;
+}
+
+.p-datatable-tbody tr:hover {
+    filter: brightness(90%);
+  }

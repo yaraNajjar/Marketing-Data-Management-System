@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: coupon-service
+          uri: ${COUPON_SERVICE_URL:http://localhost:9090}
+          predicates:
+            - Path=/coupons/**
+          filters:
+            - AuthenticationFilter
+
+        - id: identity-service
+          uri: ${IDENTITY_SERVICE_URL:http://localhost:9091}
+          predicates:
+            - Path=/auth/**
+
+token:
+  signing:
+    key: ${GATEWAY_JWT_SIGNING_KEY:}
